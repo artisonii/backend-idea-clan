@@ -33,7 +33,7 @@ const typeDefs = gql`
     email: String!
   }
   type Book {
-    _id: ID!
+    id: ID!
     title: String!
     author: String!
     genre: String!
@@ -80,7 +80,7 @@ const typeDefs = gql`
     addBook(title: String!, author: String!, genre: String!): GeneralResponse
     deleteBook(id: ID!): GeneralResponse
     updateBook(input: UpdateBookInput): GeneralResponse
-    buyBook(id: ID!): GeneralResponse
+    buyBook(id: ID!,orderType:String!): GeneralResponse
     borrowFromBorrower(id: ID!): GeneralResponse
   }
 `;
