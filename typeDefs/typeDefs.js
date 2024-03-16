@@ -33,7 +33,7 @@ const typeDefs = gql`
     email: String!
   }
   type Book {
-    id: ID!
+    _id: ID!
     title: String!
     author: String!
     genre: String!

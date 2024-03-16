@@ -15,7 +15,6 @@ async function serverStart() {
   const server = new ApolloServer({
     typeDefs,
     resolvers,
-    formatError: errorWithStatusCode,
     context: authorization,
   });
 

@@ -59,7 +59,7 @@ const getSingleBook = async (_, { id }) => {
     if (book) {
       return book;
     } else {
-      throw new ErrorWithStatusCode("Book not found!", 500);
+      return { message: "Book not found", success: false };
     }
   } catch (error) {
     return { message: "Internal Serer Error!", success: false };
@@ -190,7 +190,6 @@ const borrowFromBorrower = async (_, { id }, { userId, role }) => {
     return { message: "Internal Server Error", success: false };
   }
 };
-
 
 module.exports = {
   getBooks,
