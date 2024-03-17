@@ -33,10 +33,10 @@ const typeDefs = gql`
     email: String!
   }
   type Book {
-    id: ID!
-    title: String!
-    author: String!
-    genre: String!
+    id: ID
+    title: String
+    author: String
+    genre: String
     owner: User
     status: BookStatus
   }
@@ -65,7 +65,7 @@ const typeDefs = gql`
   type Query {
     greetings: String
     getBooks(params: BooksParams): BookResponse
-    getSingleBook(id: ID!): Book
+    getSingleBook(id: ID): Book
   }
   input UpdateBookInput {
     id: ID!
