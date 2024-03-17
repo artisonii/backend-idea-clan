@@ -147,7 +147,7 @@ query{
 
 ```
 mutation{
-    buyBook(id:"65f615de970ed8ee38fa784d",orderType:"borrow"){
+    buyBook(id:"65f6da9af1af242ed76a9c9f",orderType:"borrow"){
         message,
         success
     }
@@ -160,8 +160,8 @@ mutation{
 {
   "data": {
     "buyBook": {
-      "message": "book is not available",
-      "success": false
+      "message": "book has been borrowed successfully",
+      "success": true
     }
   }
 }
@@ -171,9 +171,10 @@ mutation{
 
 ```
 mutation{
-    buyBook(id:"65f615de970ed8ee38fa784d",orderType:"borrow"){
+    borrowFromBorrower(id:"65f615de970ed8ee38fa784d"){
         message,
         success
+
     }
 }
 ```
@@ -184,8 +185,8 @@ mutation{
 {
   "data": {
     "borrowFromBorrower": {
-      "message": "book is not available to borrow",
-      "success": false
+      "message": "book has been borrowed successfully",
+      "success": true
     }
   }
 }
@@ -427,7 +428,7 @@ success
 
 ```
 mutation{
-   deleteBook(id:"65f5f547dcc7e5836bb6968e") {
+   deleteBook(id:"65f63de1c3dffadd0da44463") {
     message,
     success
    }
@@ -440,8 +441,8 @@ mutation{
 {
   "data": {
     "deleteBook": {
-      "message": "Book not found",
-      "success": false
+      "message": "Book deleted successfully",
+      "success": true
     }
   }
 }
