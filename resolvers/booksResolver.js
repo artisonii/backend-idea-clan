@@ -137,14 +137,14 @@ const buyBook = async (_, { id, orderType }, { userId, role }) => {
           const { _id, ...rest } = book;
           const data = await BookModel.findOneAndUpdate(
             { _id: id },
-            { ...rest, status: "SOLD", buyer: userId }
+            { status: "SOLD", buyer: userId }
           );
           return { message: "book has been sold successfully", success: true };
         } else if (orderType === "borrow") {
           const { _id, ...rest } = book;
           const data = await BookModel.findOneAndUpdate(
             { _id: id },
-            { ...rest, status: "BORROWED", buyer: userId }
+            { status: "BORROWED", buyer: userId }
           );
           return {
             message: "book has been borrowed successfully",
@@ -174,7 +174,7 @@ const borrowFromBorrower = async (_, { id }, { userId, role }) => {
         const { _id, ...rest } = book;
         const data = await BookModel.findOneAndUpdate(
           { _id: id },
-          { ...rest, status: "BORROWED", buyer: userId }
+          { status: "BORROWED", buyer: userId }
         );
         return {
           message: "book has been borrowed successfully",
